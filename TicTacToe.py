@@ -136,7 +136,6 @@ def DrawXO(): # фиксация X или O в зависимости от вы�
     global TTT, XO, move
     TTT[move] = XO
     for_file()
-
     if move == 0:
         posx = 30
         posy = 30
@@ -146,7 +145,6 @@ def DrawXO(): # фиксация X или O в зависимости от вы�
     if move == 2:
         posx = width / 3 * 2 + 30
         posy = 30
-
     if move == 3:
         posx = 30
         posy = height / 3 + 30
