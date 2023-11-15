@@ -74,13 +74,15 @@ def draw_status(): # статус игры. Если победитель опр
         message = "Ходит X"
     if winner == -1:
         message = "X победил!"
-
+        into_file()
     if winner is None and XO == 1:
         message = "Ходит 0"
     if winner == 1:
         message = "0 победил!"
+        into_file()
     if draw:
         message = 'Ничья!'
+        into_file()
 
     font = pg.font.Font(None, 30)
     text = font.render(message, 1, (255, 255, 255))
@@ -132,6 +134,8 @@ def check_win(): # Отметка победителя и проведение �
 def DrawXO(): # фиксация X или O в зависимости от выбора ячейки при игре, а также смена игрока после окончания хода (XO => - XO)
     global TTT, XO, move
     TTT[move] = XO
+    for_file()
+
     if move == 0:
         posx = 30
         posy = 30
